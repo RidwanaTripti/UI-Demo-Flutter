@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SecondSreen extends StatefulWidget {
   const SecondSreen({super.key});
@@ -9,11 +8,23 @@ class SecondSreen extends StatefulWidget {
 }
 
 class _SecondSreenState extends State<SecondSreen> {
+  GlobalKey<ScaffoldState> scafoldkey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Stack(
+    return SafeArea(
+      child: Scaffold(
+        key: scafoldkey,
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                  child: Container(
+                child: ListTile(),
+              ))
+            ],
+          ),
+        ),
+        body: Stack(
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -21,20 +32,30 @@ class _SecondSreenState extends State<SecondSreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                    onPressed: (() {}),
+                    onPressed: () {
+                      //scafoldkey.currentState.openDrawer();
+                    },
                     icon: Icon(Icons.menu),
+                    color: Colors.black,
+                    hoverColor: Colors.grey,
+                    splashRadius: 16.0,
                   ),
                   CircleAvatar(
-                    child: Image.asset(
-                      "girl_profile.jpg",
-                      height: double.infinity,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
+                    radius: 18.0,
+                    child: ClipOval(
+                      child: Image(
+                        image: AssetImage(
+                          "girl_2.jpg",
+                        ),
+                        fit: BoxFit.cover,
+                        height: 100,
+                        width: 100,
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
