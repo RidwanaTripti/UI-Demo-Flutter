@@ -1,3 +1,4 @@
+import 'package:burger_app_ui/search_bar/search_field.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -25,34 +26,32 @@ class _SecondSreenState extends State<SecondSreen> {
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-            selectedLabelStyle: TextStyle(color: Colors.black),
-            items: <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home,
-                  color: Colors.black,
-                ),
-                label: "Home",
+        bottomNavigationBar:
+            BottomNavigationBar(items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: Colors.black,
+            ),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(
+                FontAwesomeIcons.cartFlatbed,
+                color: Colors.black,
+                size: 18,
               ),
-              BottomNavigationBarItem(
-                  icon: Icon(
-                    FontAwesomeIcons.cartFlatbed,
-                    color: Colors.black,
-                    size: 18,
-                  ),
-                  label: "Shop"),
-              BottomNavigationBarItem(
-                  icon: Icon(
-                    FontAwesomeIcons.heart,
-                    color: Colors.black,
-                    size: 18,
-                  ),
-                  label: "Favourite"),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.person, color: Colors.black),
-                  label: "Profile"),
-            ]),
+              label: "Shop"),
+          BottomNavigationBarItem(
+              icon: Icon(
+                FontAwesomeIcons.heart,
+                color: Colors.black,
+                size: 18,
+              ),
+              label: "Favourite"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person, color: Colors.black), label: "Profile"),
+        ]),
         body: Stack(
           children: [
             Padding(
@@ -85,6 +84,40 @@ class _SecondSreenState extends State<SecondSreen> {
                 ],
               ),
             ),
+            Container(
+              child: Padding(
+                padding:
+                    const EdgeInsets.only(top: 100.0, right: 25.0, left: 25.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Find your order",
+                      style: TextStyle(color: Colors.black54, fontSize: 25.0),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "Burger for you",
+                          style: TextStyle(color: Colors.black, fontSize: 25.0),
+                        ),
+                        ImageIcon(
+                          AssetImage("icon.jpg"),
+                          size: 25,
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 150.0),
+              child: Container(
+                padding: EdgeInsets.all(50.0),
+                child: SearchBar(),
+              ),
+            )
           ],
         ),
       ),
