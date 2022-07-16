@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SecondSreen extends StatefulWidget {
   const SecondSreen({super.key});
@@ -24,6 +25,34 @@ class _SecondSreenState extends State<SecondSreen> {
             ],
           ),
         ),
+        bottomNavigationBar: BottomNavigationBar(
+            selectedLabelStyle: TextStyle(color: Colors.black),
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                  color: Colors.black,
+                ),
+                label: "Home",
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(
+                    FontAwesomeIcons.cartFlatbed,
+                    color: Colors.black,
+                    size: 18,
+                  ),
+                  label: "Shop"),
+              BottomNavigationBarItem(
+                  icon: Icon(
+                    FontAwesomeIcons.heart,
+                    color: Colors.black,
+                    size: 18,
+                  ),
+                  label: "Favourite"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person, color: Colors.black),
+                  label: "Profile"),
+            ]),
         body: Stack(
           children: [
             Padding(
