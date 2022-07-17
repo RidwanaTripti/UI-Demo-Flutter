@@ -1,3 +1,4 @@
+import 'package:burger_app_ui/content_list.dart';
 import 'package:burger_app_ui/search_bar/search_field.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -29,6 +30,7 @@ class _SecondSreenState extends State<SecondSreen> {
         bottomNavigationBar:
             BottomNavigationBar(items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
+            backgroundColor: Colors.blue,
             icon: Icon(
               Icons.home,
               color: Colors.black,
@@ -117,7 +119,11 @@ class _SecondSreenState extends State<SecondSreen> {
                 padding: EdgeInsets.all(50.0),
                 child: SearchBar(),
               ),
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 300.0),
+              child: ContentList(),
+            ),
           ],
         ),
       ),

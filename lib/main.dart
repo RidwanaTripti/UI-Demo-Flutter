@@ -2,7 +2,7 @@ import 'package:burger_app_ui/screens/first_screen.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
-  runApp(MyApp());
+  runApp( MyApp());
 }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: "Burger App UI",
       initialRoute: "/",
       routes: {
-        '/':(context) => FirstScreen()
+        '/':(context) =>  FirstScreen()
       },
     );
   }
