@@ -21,16 +21,17 @@ class _SecondSreenState extends State<SecondSreen> {
           child: ListView(
             children: [
               DrawerHeader(
-                  child: Container(
-                child: ListTile(),
-              ))
+                child: Container(
+                  child: ListTile(),
+                ),
+              )
             ],
           ),
         ),
         bottomNavigationBar:
             BottomNavigationBar(items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            backgroundColor: Colors.blue,
+            // backgroundColor: Colors.blue,
             icon: Icon(
               Icons.home,
               color: Colors.black,
@@ -45,12 +46,13 @@ class _SecondSreenState extends State<SecondSreen> {
               ),
               label: "Shop"),
           BottomNavigationBarItem(
-              icon: Icon(
-                FontAwesomeIcons.heart,
-                color: Colors.black,
-                size: 18,
-              ),
-              label: "Favourite"),
+            icon: Icon(
+              FontAwesomeIcons.heart,
+              color: Colors.black,
+              size: 18,
+            ),
+            label: "Favourite",
+          ),
           BottomNavigationBarItem(
               icon: Icon(Icons.person, color: Colors.black), label: "Profile"),
         ]),
@@ -113,17 +115,25 @@ class _SecondSreenState extends State<SecondSreen> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 150.0),
-              child: Container(
-                padding: EdgeInsets.all(50.0),
-                child: SearchBar(),
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 150.0),
+                child: Container(
+                  padding: EdgeInsets.all(50.0),
+                  child: SearchBar(),
+                ),
+              ),
+            ),
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 290.0),
+                child: HorizontalLIst(),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 300.0),
-              child: ContentList(),
-            ),
+              padding: EdgeInsets.only(top: 450),
+              child: HorizontalConteinar(),
+            )
           ],
         ),
       ),
